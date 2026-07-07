@@ -28,29 +28,35 @@ import heroImage from '../assets/home-illustration.jpg'
     </section>
 
     <section class="categories">
-      <article class="category-card">
-        <div class="icon">📄</div>
-        <h2>PDF Courses</h2>
-        <p>
-          Easy to take away, read anywhere, and keep as your personal tech guide.
-        </p>
-      </article>
+       <router-link to="/products" class="category-card">
+          <article class="category-card">
+            <div class="icon">📄</div>
+              <h2>PDF Courses</h2>
+              <p>
+                Easy to take away, read anywhere, and keep as your personal tech guide.
+              </p>
+          </article>
+       </router-link>
+    
+       <router-link to="/products" class="category-card">
+        <article class="category-card">
+          <div class="icon">🎥</div>
+          <h2>Online Videos</h2>
+          <p>
+            Short and focused lessons to understand features step by step.
+          </p>
+        </article>
+        </router-link>
 
-      <article class="category-card">
-        <div class="icon">🎥</div>
-        <h2>Online Videos</h2>
-        <p>
-          Short and focused lessons to understand features step by step.
-        </p>
-      </article>
-
-      <article class="category-card">
-        <div class="icon">💬</div>
-        <h2>They Talk About Us</h2>
-        <p>
-          Discover how learners use our courses to grow faster in tech.
-        </p>
-      </article>
+        <router-link to="/products" class="category-card">
+          <article class="category-card">
+            <div class="icon">💬</div>
+            <h2>They Talk About Us</h2>
+            <p>
+              Discover how learners use our courses to grow faster in tech.
+            </p>
+          </article>
+        </router-link>
     </section>
   </main>
 </template>

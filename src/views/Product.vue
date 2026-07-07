@@ -1,117 +1,165 @@
 <script setup lang="ts">
-import { computed } from 'vue';
+import { computed } from 'vue'
+import { useRoute } from 'vue-router'
 
 type Product = {
   id: number
   name: string
-  category: 'sun glasses' | 'clothes' | 'jewellery'
+  category: 'pdf courses' | 'online videos' | 'they talk about us'
   emoji: string
   oldPrice: number
   salePrice: number
+  isOnSale: boolean
   description: string
   details: string
 }
 
+const route = useRoute()
 
 const products: Product[] = [
   {
     id: 1,
-    name: 'Classic Summer Sunglasses',
-    category: 'sun glasses',
-    emoji: '🕶️',
-    oldPrice: 79,
-    salePrice: 49,
-    description: 'Stylish sunglasses perfect for sunny summer days.',
+    name: 'Vue Router Quick Start PDF',
+    category: 'pdf courses',
+    emoji: '📄',
+    oldPrice: 39,
+    salePrice: 19,
+    isOnSale: true,
+    description: 'A practical PDF course to understand Vue Router fast.',
     details:
-      'These sunglasses are designed for everyday summer use. They are light, comfortable, and easy to wear with casual outfits. Perfect for beach days, city walks, and sunny weekends.'
+      'This PDF course helps you understand Vue Router step by step. You will learn how to create routes, connect pages, use router-link, display views with router-view, and work with dynamic route parameters.'
   },
   {
     id: 2,
-    name: 'Beach Round Sunglasses',
-    category: 'sun glasses',
-    emoji: '🕶️',
-    oldPrice: 69,
-    salePrice: 39,
-    description: 'Round sunglasses with a relaxed beach look.',
+    name: 'Vue Components Essentials PDF',
+    category: 'pdf courses',
+    emoji: '📄',
+    oldPrice: 45,
+    salePrice: 24,
+    isOnSale: true,
+    description: 'A clear PDF guide to master Vue components.',
     details:
-      'A soft rounded shape with a simple summer style. These sunglasses are ideal for a relaxed holiday look and protect your eyes while keeping your outfit elegant.'
+      'Learn how Vue components work, how to organize your interface, pass props, reuse UI blocks, and build cleaner frontend applications with simple examples.'
   },
   {
     id: 3,
-    name: 'Oversized Black Sunglasses',
-    category: 'sun glasses',
-    emoji: '🕶️',
-    oldPrice: 89,
-    salePrice: 59,
-    description: 'A bold oversized shape for a confident summer style.',
+    name: 'TypeScript for Vue PDF',
+    category: 'pdf courses',
+    emoji: '📄',
+    oldPrice: 49,
+    salePrice: 29,
+    isOnSale: true,
+    description: 'A focused PDF course to use TypeScript with Vue.',
     details:
-      'These oversized sunglasses add a strong fashion statement to your outfit. They are perfect if you want a modern, confident, and stylish summer accessory.'
+      'This course explains how to type your Vue code, define product types, avoid implicit any errors, and write safer components using script setup with TypeScript.'
   },
   {
     id: 4,
-    name: 'Light Summer Dress',
-    category: 'clothes',
-    emoji: '👗',
-    oldPrice: 119,
-    salePrice: 79,
-    description: 'A light and comfortable dress for warm weather.',
+    name: 'Vue Router Video Course',
+    category: 'online videos',
+    emoji: '🎥',
+    oldPrice: 89,
+    salePrice: 49,
+    isOnSale: true,
+    description: 'Short videos to learn Vue Router quickly.',
     details:
-      'This dress is made for comfort during warm days. Its light fit makes it easy to wear for a walk, a summer dinner, or a casual day outside.'
+      'Follow a practical video course where you build navigation between pages, configure createRouter, use createWebHistory, and understand how a SPA works with Vue Router.'
   },
   {
     id: 5,
-    name: 'Linen Shirt',
-    category: 'clothes',
-    emoji: '👕',
-    oldPrice: 85,
-    salePrice: 55,
-    description: 'A breathable linen shirt for a clean summer outfit.',
+    name: 'Build a Vue App Step by Step',
+    category: 'online videos',
+    emoji: '🎥',
+    oldPrice: 119,
+    salePrice: 69,
+    isOnSale: true,
+    description: 'Build a real Vue app from start to finish.',
     details:
-      'This linen shirt is simple, fresh, and breathable. It is a great choice for summer because it keeps your outfit clean while staying comfortable.'
+      'This course guides you through the creation of a complete Vue application. You will build pages, components, product cards, detail pages, and navigation with Vue Router.'
   },
   {
     id: 6,
-    name: 'Summer Shorts',
-    category: 'clothes',
-    emoji: '🩳',
-    oldPrice: 65,
+    name: 'JavaScript Modern Features',
+    category: 'online videos',
+    emoji: '🎥',
+    oldPrice: 79,
     salePrice: 39,
-    description: 'Casual shorts designed for comfort and sunny days.',
+    isOnSale: true,
+    description: 'Learn modern JavaScript used in Vue projects.',
     details:
-      'These shorts are practical and comfortable for summer activities. They are easy to combine with T-shirts, shirts, or light summer tops.'
+      'Improve your JavaScript skills with modern features like arrays, objects, modules, arrow functions, template literals, and useful methods such as filter, find, and map.'
   },
   {
     id: 7,
-    name: 'Gold Sun Necklace',
-    category: 'jewellery',
-    emoji: '📿',
-    oldPrice: 99,
-    salePrice: 69,
-    description: 'A delicate gold necklace inspired by summer light.',
+    name: 'Frontend Bootcamp Pack',
+    category: 'pdf courses',
+    emoji: '📚',
+    oldPrice: 129,
+    salePrice: 79,
+    isOnSale: true,
+    description: 'A complete PDF pack for frontend learners.',
     details:
-      'This necklace brings a warm golden accent to your outfit. It is subtle, elegant, and perfect for completing a summer look.'
+      'This bootcamp pack brings together essential frontend topics: HTML, CSS, JavaScript, Vue, components, routing, and project structure. Perfect to keep as a learning reference.'
   },
   {
     id: 8,
-    name: 'Pearl Earrings',
-    category: 'jewellery',
-    emoji: '💎',
-    oldPrice: 75,
-    salePrice: 45,
-    description: 'Elegant pearl earrings for a fresh summer look.',
+    name: 'Developer Workflow Videos',
+    category: 'online videos',
+    emoji: '🎬',
+    oldPrice: 99,
+    salePrice: 59,
+    isOnSale: true,
+    description: 'Improve your workflow as a frontend developer.',
     details:
-      'These earrings are simple and elegant. They can be worn with casual outfits or more dressed-up summer looks.'
+      'Learn how to work faster with VS Code, terminal commands, project folders, Git commits, clean code habits, and a better daily developer workflow.'
   },
   {
     id: 9,
-    name: 'Minimal Gold Bracelet',
-    category: 'jewellery',
-    emoji: '💍',
-    oldPrice: 110,
-    salePrice: 72,
-    description: 'A minimal bracelet that adds a subtle golden detail.',
+    name: 'Students Success Stories',
+    category: 'they talk about us',
+    emoji: '💬',
+    oldPrice: 29,
+    salePrice: 9,
+    isOnSale: true,
+    description: 'Real stories from learners who improved their tech skills.',
     details:
-      'This bracelet is designed to be minimal and easy to wear every day. It adds a small but elegant detail to your summer outfit.'
+      'Discover how students used our courses to understand Vue, build real projects, and become more confident with frontend development.'
+  },
+  {
+    id: 10,
+    name: 'Tech Masters Testimonials',
+    category: 'they talk about us',
+    emoji: '⭐',
+    oldPrice: 35,
+    salePrice: 15,
+    isOnSale: true,
+    description: 'Testimonials from learners becoming tech masters.',
+    details:
+      'Read feedback from learners who started with simple courses and progressively became more comfortable with Vue, JavaScript, and modern frontend tools.'
+  },
+  {
+    id: 11,
+    name: 'Vue Composition API PDF',
+    category: 'pdf courses',
+    emoji: '📄',
+    oldPrice: 59,
+    salePrice: 34,
+    isOnSale: true,
+    description: 'A practical PDF guide to the Vue Composition API.',
+    details:
+      'Learn how to use script setup, refs, computed properties, reusable logic, and clean component structure with the Vue Composition API.'
+  },
+  {
+    id: 12,
+    name: 'Fast Track Vue Videos',
+    category: 'online videos',
+    emoji: '🚀',
+    oldPrice: 109,
+    salePrice: 64,
+    isOnSale: true,
+    description: 'Fast video lessons to become productive with Vue.',
+    details:
+      'This fast-track course focuses on the most useful Vue concepts so you can quickly understand components, pages, routing, and data rendering.'
   }
 ]
 
@@ -124,14 +172,13 @@ const productId = computed(() => {
 const product = computed(() => {
   return products.find((item) => item.id === productId.value)
 })
-
 </script>
 
 <template>
   <main class="product-page">
     <section v-if="product" class="product-wrapper">
       <router-link to="/products" class="back-link">
-        ← Back to products
+        ← Back to courses
       </router-link>
 
       <article class="product-card">
@@ -163,7 +210,7 @@ const product = computed(() => {
       </article>
 
       <section class="description-card">
-        <h2>Product description</h2>
+        <h2>Course description</h2>
 
         <p>
           {{ product.details }}
@@ -175,9 +222,12 @@ const product = computed(() => {
       <h1>Product not found</h1>
 
       <p>
-        The product you are looking for does not exist.
+        The course you are looking for does not exist.
       </p>
 
+      <router-link to="/products" class="back-link">
+        Back to courses
+      </router-link>
     </section>
   </main>
 </template>
@@ -202,7 +252,7 @@ const product = computed(() => {
   margin-bottom: 24px;
   color: #1f2d3d;
   font-size: 15px;
-  font-weight: 700;
+  font-weight: 800;
   text-decoration: none;
 }
 
@@ -211,6 +261,8 @@ const product = computed(() => {
 }
 
 .product-card {
+  position: relative;
+  overflow: hidden;
   display: grid;
   grid-template-columns: 260px 1fr;
   gap: 32px;
@@ -221,13 +273,37 @@ const product = computed(() => {
   box-shadow: 0 24px 60px rgba(31, 45, 61, 0.14);
 }
 
+.product-card::before {
+  content: "SALE";
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: #f5b942;
+  color: #1f2d3d;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.product-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 6px;
+  width: 100%;
+  background: #42b883;
+}
+
 .product-image {
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 240px;
   border-radius: 24px;
-  background: #f4f7f8;
+  background: rgba(245, 185, 66, 0.18);
   font-size: 96px;
 }
 
