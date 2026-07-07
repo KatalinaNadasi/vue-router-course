@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { computed } from 'vue';
 
 type Product = {
   id: number
@@ -114,6 +115,15 @@ const products: Product[] = [
   }
 ]
 
+const productId = computed(() => {
+  const id = route.params.id
+
+  return Number(Array.isArray(id) ? id[0] : id)
+})
+
+const product = computed(() => {
+  return products.find((item) => item.id === productId.value)
+})
 
 </script>
 
