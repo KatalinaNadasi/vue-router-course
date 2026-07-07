@@ -1,9 +1,9 @@
 <script setup>
-  import Home from './views/Home.vue'
+  import Products from './views/Products.vue'
 </script>
 
 <template>
   <main class="home-page">
-    <Home />
+    <Products />
   </main>
 </template>

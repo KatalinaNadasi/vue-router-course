@@ -16,9 +16,6 @@ import heroImage from '../assets/home-illustration.jpg'
           Learn fast with short courses organized by features, tools, and real
           developer needs.
         </p>
-        <router-link to="/products" class="cta-button">
-          Explore sales products
-        </router-link>
       </div>
 
       <div class="hero-image-wrapper">

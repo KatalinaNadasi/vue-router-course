@@ -4,7 +4,7 @@ import { computed } from 'vue'
 type Product = {
   id: number
   name: string
-  category: 'sun glasses' | 'clothes' | 'jewellery'
+  category: 'pdf courses' | 'online videos' | 'they talk about us'
   emoji: string
   oldPrice: number
   salePrice: number
@@ -14,110 +14,110 @@ type Product = {
 const products: Product[] = [
   {
     id: 1,
-    name: 'Classic Summer Sunglasses',
-    category: 'sun glasses',
-    emoji: '🕶️',
-    oldPrice: 79,
-    salePrice: 49,
+    name: 'Vue Router Quick Start PDF',
+    category: 'pdf courses',
+    emoji: '📄',
+    oldPrice: 39,
+    salePrice: 19,
     isOnSale: true
   },
   {
     id: 2,
-    name: 'Beach Round Sunglasses',
-    category: 'sun glasses',
-    emoji: '🕶️',
-    oldPrice: 69,
-    salePrice: 39,
+    name: 'Vue Components Essentials PDF',
+    category: 'pdf courses',
+    emoji: '📄',
+    oldPrice: 45,
+    salePrice: 24,
     isOnSale: true
   },
   {
     id: 3,
-    name: 'Oversized Black Sunglasses',
-    category: 'sun glasses',
-    emoji: '🕶️',
-    oldPrice: 89,
-    salePrice: 59,
+    name: 'TypeScript for Vue PDF',
+    category: 'pdf courses',
+    emoji: '📄',
+    oldPrice: 49,
+    salePrice: 29,
     isOnSale: true
   },
   {
     id: 4,
-    name: 'Light Summer Dress',
-    category: 'clothes',
-    emoji: '👗',
-    oldPrice: 119,
-    salePrice: 79,
+    name: 'Vue Router Video Course',
+    category: 'online videos',
+    emoji: '🎥',
+    oldPrice: 89,
+    salePrice: 49,
     isOnSale: true
   },
   {
     id: 5,
-    name: 'Linen Shirt',
-    category: 'clothes',
-    emoji: '👕',
-    oldPrice: 85,
-    salePrice: 55,
+    name: 'Build a Vue App Step by Step',
+    category: 'online videos',
+    emoji: '🎥',
+    oldPrice: 119,
+    salePrice: 69,
     isOnSale: true
   },
   {
     id: 6,
-    name: 'Summer Shorts',
-    category: 'clothes',
-    emoji: '🩳',
-    oldPrice: 65,
+    name: 'JavaScript Modern Features',
+    category: 'online videos',
+    emoji: '🎥',
+    oldPrice: 79,
     salePrice: 39,
     isOnSale: true
   },
   {
     id: 7,
-    name: 'Gold Sun Necklace',
-    category: 'jewellery',
-    emoji: '📿',
-    oldPrice: 99,
-    salePrice: 69,
+    name: 'Frontend Bootcamp Pack',
+    category: 'pdf courses',
+    emoji: '📚',
+    oldPrice: 129,
+    salePrice: 79,
     isOnSale: true
   },
   {
     id: 8,
-    name: 'Pearl Earrings',
-    category: 'jewellery',
-    emoji: '💎',
-    oldPrice: 75,
-    salePrice: 45,
+    name: 'Developer Workflow Videos',
+    category: 'online videos',
+    emoji: '🎬',
+    oldPrice: 99,
+    salePrice: 59,
     isOnSale: true
   },
   {
     id: 9,
-    name: 'Minimal Gold Bracelet',
-    category: 'jewellery',
-    emoji: '💍',
-    oldPrice: 110,
-    salePrice: 72,
+    name: 'Students Success Stories',
+    category: 'they talk about us',
+    emoji: '💬',
+    oldPrice: 29,
+    salePrice: 9,
     isOnSale: true
   },
   {
     id: 10,
-    name: 'Casual White T-Shirt',
-    category: 'clothes',
-    emoji: '👕',
-    oldPrice: 45,
-    salePrice: 29,
+    name: 'Tech Masters Testimonials',
+    category: 'they talk about us',
+    emoji: '⭐',
+    oldPrice: 35,
+    salePrice: 15,
     isOnSale: true
   },
   {
     id: 11,
-    name: 'Summer Hat',
-    category: 'clothes',
-    emoji: '👒',
-    oldPrice: 55,
-    salePrice: 35,
+    name: 'Vue Composition API PDF',
+    category: 'pdf courses',
+    emoji: '📄',
+    oldPrice: 59,
+    salePrice: 34,
     isOnSale: true
   },
   {
     id: 12,
-    name: 'Ocean Blue Sunglasses',
-    category: 'sun glasses',
-    emoji: '🕶️',
-    oldPrice: 95,
-    salePrice: 62,
+    name: 'Fast Track Vue Videos',
+    category: 'online videos',
+    emoji: '🚀',
+    oldPrice: 109,
+    salePrice: 64,
     isOnSale: true
   }
 ]
@@ -132,22 +132,18 @@ const salesProducts = computed(() => {
 <template>
   <main class="products-page">
     <section class="products-hero">
-      <p class="eyebrow">Summer Sales</p>
+      <p class="eyebrow">Summer Tech Sales 2026</p>
 
-      <h1>Sales Products</h1>
+      <h1>Sales Courses</h1>
 
       <p class="hero-text">
-        Explore our best summer deals. Sunglasses, clothes, and jewellery are
-        now available at special prices.
+        Discover fast and practical tech courses organized by features.
+        Learn with PDF courses, online videos, and real learner stories.
       </p>
     </section>
 
     <section class="products-info">
-      <p>
-        Showing {{ salesProducts.length }} sales products
-      </p>
-
-      <span>Maximum 20 products displayed</span>
+        Learn with PDF courses, online videos, and real learner stories.
     </section>
 
     <section class="products-grid">
@@ -193,39 +189,39 @@ const salesProducts = computed(() => {
 .products-page {
   min-height: 100vh;
   padding: 64px 24px;
-  background: #f4f7f8;
+  background: linear-gradient(135deg, #fff7e6, #ffe4ec);
   color: #1f2d3d;
   font-family: Arial, sans-serif;
 }
 
 .products-hero {
-  max-width: 820px;
-  margin: 0 auto 40px;
+  max-width: 900px;
+  margin: 0 auto 48px;
   text-align: center;
 }
 
 .eyebrow {
   display: inline-block;
-  margin-bottom: 16px;
+  margin-bottom: 18px;
   padding: 8px 16px;
   border-radius: 999px;
   background: rgba(66, 184, 131, 0.12);
   color: #42b883;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 2px;
   text-transform: uppercase;
 }
 
 .products-hero h1 {
   margin: 0;
-  font-size: clamp(42px, 7vw, 76px);
-  line-height: 1;
+  font-size: clamp(48px, 8vw, 88px);
+  line-height: 0.95;
   color: #1f2d3d;
 }
 
 .hero-text {
-  max-width: 640px;
+  max-width: 700px;
   margin: 24px auto 0;
   font-size: 18px;
   line-height: 1.6;
@@ -240,8 +236,8 @@ const salesProducts = computed(() => {
   margin: 0 auto 24px;
   padding: 16px 20px;
   border-radius: 18px;
-  background: #ffffff;
-  box-shadow: 0 12px 28px rgba(31, 45, 61, 0.06);
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 12px 28px rgba(31, 45, 61, 0.08);
 }
 
 .products-info p,
@@ -252,7 +248,7 @@ const salesProducts = computed(() => {
 }
 
 .products-info p {
-  font-weight: 700;
+  font-weight: 800;
   color: #1f2d3d;
 }
 
@@ -270,10 +266,9 @@ const salesProducts = computed(() => {
   display: flex;
   flex-direction: column;
   padding: 24px;
-  border: 1px solid rgba(31, 45, 61, 0.08);
   border-radius: 24px;
   background: #ffffff;
-  box-shadow: 0 18px 40px rgba(31, 45, 61, 0.08);
+  box-shadow: 0 18px 40px rgba(31, 45, 61, 0.12);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -287,13 +282,23 @@ const salesProducts = computed(() => {
   background: #f5b942;
   color: #1f2d3d;
   font-size: 11px;
-  font-weight: 800;
+  font-weight: 900;
   letter-spacing: 1px;
+}
+
+.product-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 6px;
+  width: 100%;
+  background: #42b883;
 }
 
 .product-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 24px 50px rgba(31, 45, 61, 0.14);
+  box-shadow: 0 24px 50px rgba(31, 45, 61, 0.18);
 }
 
 .product-emoji {
@@ -304,7 +309,7 @@ const salesProducts = computed(() => {
   height: 76px;
   margin-bottom: 20px;
   border-radius: 50%;
-  background: rgba(245, 185, 66, 0.18);
+  background: rgba(245, 185, 66, 0.2);
   font-size: 40px;
 }
 
@@ -317,7 +322,7 @@ const salesProducts = computed(() => {
   margin-bottom: 10px;
   color: #42b883;
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 800;
   text-transform: uppercase;
 }
 
@@ -336,15 +341,15 @@ const salesProducts = computed(() => {
 }
 
 .old-price {
-  color: rgba(31, 45, 61, 0.45);
+  color: rgba(31, 45, 61, 0.42);
   font-size: 15px;
   text-decoration: line-through;
 }
 
 .sale-price {
   color: #1f2d3d;
-  font-size: 22px;
-  font-weight: 800;
+  font-size: 24px;
+  font-weight: 900;
 }
 
 .details-link {
@@ -355,9 +360,10 @@ const salesProducts = computed(() => {
   background: #42b883;
   color: #ffffff;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 800;
   text-align: center;
   text-decoration: none;
+  box-shadow: 0 10px 24px rgba(66, 184, 131, 0.28);
   transition: background 0.2s ease, transform 0.2s ease;
 }
 
