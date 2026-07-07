@@ -1,65 +1,92 @@
-
-
+<script setup lang="ts">
+import heroImage from '../assets/home-illustration.jpg'
+</script>
 
 <template>
   <main class="home-page">
     <section class="hero">
-      <p class="eyebrow">Summer Collection 2026</p>
+      <div class="hero-content">
+        <p class="eyebrow">Summer Tech 2026</p>
 
-      <h1>Summer Sales</h1>
+        <h1>Tech courses easy to use</h1>
 
-      <p class="hero-text">
-        Discover our best summer deals on sunglasses, clothes, and jewellery.
-        Fresh styles, sunny vibes, and special prices for a limited time.
-      </p>
+        <p class="hero-text">
+          We don't create content, we create tech masters.
+          We love technologies and technologies love us too.
+          Learn fast with short courses organized by features, tools, and real
+          developer needs.
+        </p>
+        <router-link to="/products" class="cta-button">
+          Explore sales products
+        </router-link>
+      </div>
+
+      <div class="hero-image-wrapper">
+        <img
+          :src="heroImage"
+          alt="Vue Router character navigating between pages"
+          class="hero-image"
+        />
+      </div>
     </section>
 
     <section class="categories">
       <article class="category-card">
-        <div class="icon">🕶️</div>
-        <h2>Sun Glasses</h2>
-        <p>Protect your eyes with stylish summer sunglasses.</p>
-      </article>
-      <article class="category-card">
-        <div class="icon">👗</div>
-        <h2>Clothes</h2>
-        <p>Light outfits and fresh looks for sunny days.</p>
+        <div class="icon">📄</div>
+        <h2>PDF Courses</h2>
+        <p>
+          Easy to take away, read anywhere, and keep as your personal tech guide.
+        </p>
       </article>
 
       <article class="category-card">
-        <div class="icon">💍</div>
-        <h2>Jewellery</h2>
-        <p>Complete your summer outfit with elegant accessories.</p>
+        <div class="icon">🎥</div>
+        <h2>Online Videos</h2>
+        <p>
+          Short and focused lessons to understand features step by step.
+        </p>
+      </article>
+
+      <article class="category-card">
+        <div class="icon">💬</div>
+        <h2>They Talk About Us</h2>
+        <p>
+          Discover how learners use our courses to grow faster in tech.
+        </p>
       </article>
     </section>
-
-    <div class="cta-wrapper">
-      <router-link to="/products" class="cta-button">
-        Explore sales products
-      </router-link>
-    </div>
   </main>
 </template>
-
 
 <style scoped>
 .home-page {
   min-height: 100vh;
   padding: 64px 24px;
   background: linear-gradient(135deg, #fff7e6, #ffe4ec);
-  color: #222;
+  color: #1f2d3d;
   font-family: Arial, sans-serif;
 }
 
 .hero {
-  max-width: 800px;
-  margin: 0 auto 48px;
-  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  max-width: 1180px;
+  margin: 0 auto 56px;
+}
+
+.hero-content {
+  max-width: 560px;
 }
 
 .eyebrow {
-  margin-bottom: 12px;
-  color: #ff7a00;
+  display: inline-block;
+  margin-bottom: 16px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: rgba(66, 184, 131, 0.12);
+  color: #42b883;
   font-size: 14px;
   font-weight: 700;
   letter-spacing: 2px;
@@ -68,17 +95,49 @@
 
 .hero h1 {
   margin: 0;
-  font-size: clamp(48px, 8vw, 88px);
-  line-height: 1;
-  color: #1f2937;
+  font-size: clamp(52px, 8vw, 92px);
+  line-height: 0.95;
+  color: #1f2d3d;
 }
 
 .hero-text {
-  max-width: 620px;
-  margin: 24px auto 0;
+  max-width: 560px;
+  margin: 24px 0 0;
   font-size: 18px;
   line-height: 1.6;
-  color: #555;
+  color: rgba(31, 45, 61, 0.75);
+}
+
+.hero-image-wrapper {
+  padding: 18px;
+  border-radius: 32px;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 24px 60px rgba(31, 45, 61, 0.14);
+}
+
+.hero-image {
+  display: block;
+  width: 100%;
+  border-radius: 24px;
+}
+
+.cta-button {
+  display: inline-block;
+  margin-top: 32px;
+  padding: 16px 28px;
+  border-radius: 999px;
+  background: #42b883;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 12px 28px rgba(66, 184, 131, 0.35);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.cta-button:hover {
+  background: #35a372;
+  transform: translateY(-2px);
 }
 
 .categories {
@@ -87,6 +146,17 @@
   gap: 24px;
   max-width: 1050px;
   margin: 0 auto;
+}
+
+.category-card {
+  position: relative;
+  overflow: hidden;
+  padding: 32px 24px;
+  border-radius: 24px;
+  background: #ffffff;
+  text-align: center;
+  box-shadow: 0 18px 40px rgba(31, 45, 61, 0.12);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .category-card::before {
@@ -99,18 +169,9 @@
   background: #42b883;
 }
 
-.category-card {
-  padding: 32px 24px;
-  border-radius: 24px;
-  background: #ffffff;
-  text-align: center;
-  box-shadow: 0 18px 40px rgba(31, 41, 55, 0.12);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
 .category-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 24px 50px rgba(31, 41, 55, 0.18);
+  box-shadow: 0 24px 50px rgba(31, 45, 61, 0.18);
 }
 
 .icon {
@@ -121,37 +182,31 @@
 .category-card h2 {
   margin: 0 0 12px;
   font-size: 24px;
-  color: #1f2937;
+  color: #1f2d3d;
 }
 
 .category-card p {
   margin: 0;
   font-size: 15px;
   line-height: 1.5;
-  color: #666;
+  color: rgba(31, 45, 61, 0.68);
 }
 
-.cta-wrapper {
-  margin-top: 44px;
-  text-align: center;
-}
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
 
-.cta-button {
-  display: inline-block;
-  padding: 16px 28px;
-  border-radius: 999px;
-  background: #ff7a00;
-  color: #ffffff;
-  font-size: 16px;
-  font-weight: 700;
-  text-decoration: none;
-  box-shadow: 0 12px 28px rgba(255, 122, 0, 0.35);
-  transition: transform 0.2s ease, background 0.2s ease;
-}
+  .hero-content {
+    max-width: 760px;
+    margin: 0 auto;
+  }
 
-.cta-button:hover {
-  background: #e86f00;
-  transform: translateY(-2px);
+  .hero-text {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 @media (max-width: 768px) {
