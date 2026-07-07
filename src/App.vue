@@ -7,12 +7,3 @@
     <Home />
   </main>
 </template>
-
-
-
-<style scoped>
-  home-page{
-    text-align: center;
-    background: aquamarine;
-  }
-</style>
